@@ -3,7 +3,10 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 <title>Devops Monitor</title>
-
+<?php
+$prod=getenv("production");
+$devops=getenv("devops");
+?>
 <script>
 var to = 2;
 
@@ -54,19 +57,18 @@ setInterval(refreshIframe, 2000);
 
 
 
-<center><h2>BIG IP View</h2>
+<center><h2>Consolidated view</h2>
 <table border=0 cellspacing=0>
 <tr><td align=middle><b>Prod:</b></td><td align=middle><b>DevOps:</b></td></tr>
 <?php
- echo "<tr><td align=middle><iframe src=\"http://10.179.31.186:80/index.php?rand=".rand(0,1000)."\" frameBorder=\"1\" scrolling=\"no\" id='myframe' width=270></iframe>
+ echo "<tr><td align=middle><iframe src=\"http://$prod?rand=".rand(0,1000)."\" frameBorder=\"1\" scrolling=\"no\" id='myframe' width=270></iframe>
 <br><img src='./img/keyboard.png'>
 </td><td align=left>
- <iframe src=\"http://10.179.31.186:81/index.php?rand=".rand(0,10000)."\" frameBorder=\"1\" scrolling=\"no\" id='myframe2' width=270></iframe>
+ <iframe src=\"http://$devops?rand".rand(0,10000)."\" frameBorder=\"1\" scrolling=\"no\" id='myframe2' width=270></iframe>
 <br><img src='./img/keyboard.png'>
 </td></tr>";
 ?>
-<tr><td align=middle><img src='./img/leftArrow.png' height=50></td><td align=middle><img src='./img/rightArrow.png' height=50></td></tr>
-<tr><td colspan=2 cellspan=2 align=middle>
+
 
 <script>
 
@@ -75,7 +77,7 @@ setInterval(refreshIframe, 2000);
 </script>
 
 
-<img src="../img.php?x=x" class="refr" alt="" />
+
 </td></tr></table>
 
 </body>
