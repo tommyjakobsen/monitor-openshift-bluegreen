@@ -4,8 +4,8 @@
 <meta http-equiv="Expires" content="0" />
 <title>Devops Monitor</title>
 <?php
-$prod=getenv("green");
-$devops=getenv("blue");
+$prod=getenv("blue");
+$devops=getenv("green");
 ?>
 <script>
 var to = 2;
